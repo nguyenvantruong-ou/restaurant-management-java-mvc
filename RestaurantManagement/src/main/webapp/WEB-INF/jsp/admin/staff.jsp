@@ -17,7 +17,7 @@
             </div>
         </form>
         <div>
-            <a href="/RestaurantManagement/admin/staff/add"><input class="button button-edit" type="button" value="Thêm mới nhân viên"/></a>
+            <a href="<c:url value='/admin/staff/add' />"><input class="button button-edit" type="button" value="Thêm mới nhân viên"/></a>
         </div>
         <table class="content-table">
             <thead>

@@ -29,7 +29,7 @@
                     ${order.lob.lobTotalTable*60/100} đến ${order.lob.lobTotalTable} bàn
                 </div>
             </c:if>
-            <form class="form-group" action="/RestaurantManagement/booking-menu">
+            <form class="form-group" action="<c:url value='/booking-menu' />">
                 <div>
                     <input type="text" value="${order.id}" hidden="true" name="ordId"/>
                     <div>
@@ -67,7 +67,7 @@
                                 <td>${om.amountTable}</td>
                                 <td>${om.menu.menuPrice}</td>
                                 <td>
-                                    <a href="/RestaurantManagement/booking-menu-delete?ordId=${order.id}&menuId=${om.menu.id}">
+                                    <a href="<c:url value='/booking-menu-delete?ordId=${order.id}&menuId=${om.menu.id}' />">
                                         <input type="button" value="Xoá" class="btn btn-danger" />
                                     </a>
                                 </td>
@@ -84,7 +84,7 @@
                 <br>
                 <br>
                 <br>
-                <form class="form-group" action="/RestaurantManagement/booking-service">
+                <form class="form-group" action="<c:url value='/booking-service' />">
                     <div>
                         <input type="text" value="${order.id}" hidden="true" name="ordId"/>
                     <label>Dich vụ</label>
@@ -114,7 +114,7 @@
                                 <td>${os.ser.serName}</td>
                                 <td>${os.ser.serPrice}</td>
                                 <td>
-                                    <a href="/RestaurantManagement/booking-service-delete?ordId=${order.id}&serId=${os.ser.id}">
+                                    <a href="<c:url value='/booking-service-delete?ordId=${order.id}&serId=${os.ser.id}' />">
                                         <input type="button" value="Xoá" class="btn btn-danger" />
                                     </a>
                                 </td>
@@ -129,7 +129,7 @@
     </div>
     <br><br>
     <div class="text-center">
-        <a href="/RestaurantManagement/booking-complete?ordId=${order.id}" >
+        <a href="<c:url value='/booking-complete?ordId=${order.id}' />" >
         <input style="width: 250px; " type="button" value="Hoàn tất" class="btn btn-success" />
     </a>
 </div>

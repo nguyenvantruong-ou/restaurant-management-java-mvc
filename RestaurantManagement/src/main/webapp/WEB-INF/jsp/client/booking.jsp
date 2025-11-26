@@ -14,7 +14,7 @@
 <h1 class="text-center text-danger">ĐẶT SẢNH CƯỚI</h1>
 <br>
 <div class="text-center">
-    <form class="form-group" action="/RestaurantManagement/booking">
+    <form class="form-group" action="<c:url value='/booking' />">
         <div style="margin-bottom: 10px">
             <label>Sảnh cưới </label>
             <select name="lobId" style="width: 312px; height: 30px">

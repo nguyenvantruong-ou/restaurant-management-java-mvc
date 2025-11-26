@@ -76,7 +76,7 @@
 <br>
 <div class="row">
     <div class="col-md-6">
-        <form action="/RestaurantManagement/payment-cash/created-bill">
+        <form action="<c:url value='/payment-cash/created-bill' />">
             <div>
                 <input type="text" name="totalMoney" value="${totalService + totalMenu + totalLobby}" hidden="true"/>
                 <input type="text" name="ordId" value="${ordId}" hidden="true"/>
@@ -88,7 +88,7 @@
         </form>
     </div>
     <div class="col-md-6">
-        <form action="/RestaurantManagement/payment-momo/created-bill">
+        <form action="<c:url value='/payment-momo/created-bill' />">
             <div>
                 <input type="text" name="totalMoney" value="${totalService + totalMenu + totalLobby}" hidden="true"/>
                 <input type="text" name="ordId" value="${ordId}" hidden="true"/>

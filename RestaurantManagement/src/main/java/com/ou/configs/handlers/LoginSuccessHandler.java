@@ -28,9 +28,9 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         User u = this.userDetailsService.getUsers(a.getName()).get(0);
         request.getSession().setAttribute("currentUser", u);
         if ("USER".equals(u.getUserRole()) || "STAFF".equals(u.getUserRole())) {
-            response.sendRedirect("/RestaurantManagement");
+            response.sendRedirect("/");
         } else {
-            response.sendRedirect("/RestaurantManagement/admin");
+            response.sendRedirect("/admin");
         }
     }
 }

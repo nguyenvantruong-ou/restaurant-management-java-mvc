@@ -29,10 +29,10 @@
                         <td>${o.lob.lobName}</td>
                         <c:if test="${o.ordIsPayment == false}">
                             <td>
-                                <a href="/RestaurantManagement/payment?id=${o.id}">
+                                <a href="<c:url value='/payment?id=${o.id}' />">
                                     <input style="margin-right: 30px; margin-left: 10px" type="button" class="btn btn-success" value="Thanh toán" />
                                 </a>
-                                <a href="/RestaurantManagement/user-order/delete?ordId=${o.id}&username=${pageContext.request.userPrincipal.name}">
+                                <a href="<c:url value='/user-order/delete?ordId=${o.id}&username=${pageContext.request.userPrincipal.name}' />">
                                     <input type="button" class="btn btn-danger" value="Huỷ" />
                                 </a>
                             </td>

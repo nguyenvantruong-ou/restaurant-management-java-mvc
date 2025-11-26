@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # MySQL Database Service
+  db:
+    image: mysql:8.0
+    container_name: restaurant_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: restaurantmanagement
+      MYSQL_USER: restaurant_user
+      MYSQL_PASSWORD: restaurant_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p12345678"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - restaurant_network
+
+  # Java Application Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: restaurant_app
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_NAME=restaurantmanagement
+      - DB_USER=root
+      - DB_PASSWORD=12345678
+      - SEED_DATABASE=true
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - restaurant_network
+
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  restaurant_network:
+    driver: bridge
+

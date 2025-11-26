@@ -9,7 +9,7 @@ $("#noti-feed").ready(function () {
 
 //dem contiffication chua doc
 function countUnread() {
-    fetch("/RestaurantManagement/api/count-contification", {
+    fetch("/api/count-contification", {
         method: 'post',
         body: JSON.stringify({
         }),
@@ -36,7 +36,7 @@ $("#list-username").ready(function () {
 
 //lay danh sach tat ca cac user phan hoi
 function  getListUserContiRead() {
-    fetch("/RestaurantManagement/api/username-in-feedback", {
+    fetch("/api/username-in-feedback", {
         method: 'post',
         body: JSON.stringify({
             "kw": ""
@@ -102,7 +102,7 @@ function showListUser(data) {
 
 //dem so phan hoi chua doc
 function  unreadFeedbackByUsername() {
-    fetch("/RestaurantManagement/api/unread-feedback-by-username", {
+    fetch("/api/unread-feedback-by-username", {
         method: 'post',
         body: JSON.stringify({
         }),
@@ -132,7 +132,7 @@ function searchFeedback(element) {
 //lay danh sach tat ca cac user phan hoi
 function  getListUserContiByKw(kw) {
     flag = 0;
-    fetch("/RestaurantManagement/api/username-in-feedback", {
+    fetch("/api/username-in-feedback", {
         method: 'post',
         body: JSON.stringify({
             "kw": kw
@@ -159,7 +159,7 @@ function setDeleteData() {
 function  getFeedbackByUsername(username) {
     if (document.getElementById("unread" + username))
         document.getElementById("unread" + username).style.display = "none";
-    fetch("/RestaurantManagement/api/feedback-by-username", {
+    fetch("/api/feedback-by-username", {
         method: 'post',
         body: JSON.stringify({
             "username": username.trim()
@@ -219,7 +219,7 @@ function  showDetailFeedback(data, username) {
 
 //cap nhat  trang thai
 function setReadFeedback(username) {
-    fetch("/RestaurantManagement/api/read-feedback", {
+    fetch("/api/read-feedback", {
         method: 'post',
         body: JSON.stringify({
             "username": username.trim()
@@ -242,7 +242,7 @@ function setReadFeedback(username) {
 
 let listAllFeedback = {}
 function getAllFeedback() {
-    fetch("/RestaurantManagement/api/get-all-list-feedback", {
+    fetch("/api/get-all-list-feedback", {
         method: 'post',
         body: JSON.stringify({
         }),

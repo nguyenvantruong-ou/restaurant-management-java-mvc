@@ -16,8 +16,10 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
+@Transactional
 public class StatsRepositoryImpl implements StatsRepository {
 
     @Autowired

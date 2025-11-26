@@ -16,6 +16,6 @@ public class LogoutHandler implements LogoutSuccessHandler{
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication a) throws IOException, ServletException {
         request.getSession().removeAttribute("currentUser");
         
-        response.sendRedirect("/RestaurantManagement/sign-in");
+        response.sendRedirect("/sign-in");
     }
 }

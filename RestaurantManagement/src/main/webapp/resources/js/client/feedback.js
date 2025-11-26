@@ -61,9 +61,7 @@ function sendFeedback() {
             confirmButtonText: 'Đăng nhập'
         }).then((result) => {
             if (result.isConfirmed) {
-                var x = location.href
-                let url = x.slice(0, x.indexOf('RestaurantManagement/') + 21) + "sign-in"
-                window.location = url;
+                window.location = "/sign-in";
             }
 
         })
@@ -83,7 +81,7 @@ function sendFeedback() {
 }
 
 function saveFeedback(user_name) {
-    fetch("/RestaurantManagement/api/feedback", {
+    fetch("/api/feedback", {
         method: 'post',
         body: JSON.stringify({
             "content": document.getElementById("content").value.trim(),
@@ -108,9 +106,7 @@ function saveFeedback(user_name) {
                 confirmButtonText: 'Trờ lại'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    var x = location.href
-                    let url = x.slice(0, x.indexOf('RestaurantManagement/') + 21)
-                    window.location = url;
+                    window.location = "/";
                 }
 
             })
@@ -128,9 +124,7 @@ function saveFeedback(user_name) {
                 confirmButtonText: 'Trờ lại'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    var x = location.href
-                    let url = x.slice(0, x.indexOf('RestaurantManagement/') + 21)
-                    window.location = url;
+                    window.location = "/";
                 }
 
             })

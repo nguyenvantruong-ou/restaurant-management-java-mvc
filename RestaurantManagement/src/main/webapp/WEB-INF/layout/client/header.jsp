@@ -4,13 +4,13 @@
 <header id="header-nav">
     <nav class="navbar navbar-expand-sm bg-black navbar-dark">
         <!-- Brand -->
-        <a class="navbar-brand" style="margin-left: 15px" href="/RestaurantManagement">
+        <a class="navbar-brand" style="margin-left: 15px" href="<c:url value='/' />">
             <img width="50px" height="50px" src="<c:url value="/resources/images/toast.png" />" alt="TV"/>
         </a>
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/RestaurantManagement#lobbyTV">Sảnh</a>
+                <a class="nav-link" href="<c:url value='/#lobbyTV' />">Sảnh</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="menu">Danh sách món</a>
@@ -27,7 +27,7 @@
                     </li>
                      <li class="nav-item">
                         <a class="nav-link" 
-                           href="/RestaurantManagement/user-order?username=${pageContext.request.userPrincipal.name}">
+                           href="<c:url value='/user-order?username=${pageContext.request.userPrincipal.name}' />">
                             Đơn hàng của tôi
                         </a>
                     </li>

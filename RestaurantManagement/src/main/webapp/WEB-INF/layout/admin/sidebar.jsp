@@ -17,21 +17,21 @@
     </div>
     <ul class="list-unstyled components">
         <li class="active">
-            <a href="/RestaurantManagement/admin">
+            <a href="<c:url value='/admin' />">
                 <i class="fas fa-home"></i>
                 <span class="item">Trang chủ</span>
             </a>
         </li>
         <li>
-            <a href="/RestaurantManagement/admin/staff">
+            <a href="<c:url value='/admin/staff' />">
                 <i class='bx bx-male-female icon'></i>
                 <span class="item">Quản lý nhân viên</span>
             </a>
-            <a href="/RestaurantManagement/admin/lobby">
+            <a href="<c:url value='/admin/lobby' />">
                 <i class='bx bxs-institution'></i>
                 <span class="item">Quản lý sảnh cưới</span>
             </a>
-            <a href="/RestaurantManagement/admin/service">
+            <a href="<c:url value='/admin/service' />">
                 <i class='bx bx-receipt'></i>
                 <span class="item">Quản lý dịch vụ</span>
             </a>
@@ -41,16 +41,16 @@
             </a>
             <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
-                    <a href="/RestaurantManagement/admin/bill-day-stats">Ngày</a>
+                    <a href="<c:url value='/admin/bill-day-stats' />">Ngày</a>
                 </li>
                 <li>
-                    <a href="/RestaurantManagement/admin/bill-month-stats">Tháng</a>
+                    <a href="<c:url value='/admin/bill-month-stats' />">Tháng</a>
                 </li>
                 <li>
-                    <a href="/RestaurantManagement/admin/bill-quarter-stats">Quý</a>
+                    <a href="<c:url value='/admin/bill-quarter-stats' />">Quý</a>
                 </li>
                 <li>
-                    <a href="/RestaurantManagement/admin/bill-year-stats">Năm</a>
+                    <a href="<c:url value='/admin/bill-year-stats' />">Năm</a>
                 </li>
             </ul>
             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -59,31 +59,31 @@
             </a>
             <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li>
-                    <a href="/RestaurantManagement/admin/order-month-stats">Tháng</a>
+                    <a href="<c:url value='/admin/order-month-stats' />">Tháng</a>
                 </li>
                 <li>
-                    <a href="/RestaurantManagement/admin/order-quarter-stats">Quý</a>
+                    <a href="<c:url value='/admin/order-quarter-stats' />">Quý</a>
                 </li>
                 <li>
-                    <a href="/RestaurantManagement/admin/order-year-stats">Năm</a>
+                    <a href="<c:url value='/admin/order-year-stats' />">Năm</a>
                 </li>
             </ul>
         </li>
         <li>
-            <a href="/RestaurantManagement/admin/profile">
+            <a href="<c:url value='/admin/profile' />">
                 <i class='bx bx-user icon'></i>
                 <span class="item">Thông tin quản trị viên</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/RestaurantManagement/admin/feedback">
+            <a class="nav-link" href="<c:url value='/admin/feedback' />">
                 <i class='bx bx-bell'></i>
                <span class="item">Thông báo</span>
                 <sup id="count-conti" style="background:red; padding: 2px 4px; border-radius: 15px">0</sup>
             </a>
         </li>
         <li>
-            <a href="/RestaurantManagement/logout">
+            <a href="<c:url value='/logout' />">
                 <i class='bx bx-log-out icon' ></i>
                 <span class="item">Đăng xuất</span>
             </a>

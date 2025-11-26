@@ -10,11 +10,11 @@
     <class>com.ou.pojos.Menu</class>
     <class>com.ou.pojos.Dish</class>
     <class>com.ou.pojos.OrderMenu</class>
-    <class>com.ou.pojos.Order1</class>
+    <class>com.ou.pojos.Order</class>
     <class>com.ou.pojos.Service</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/restaurantmanagement?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/restaurantmanagement?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="12345678"/>

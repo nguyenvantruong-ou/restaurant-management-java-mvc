@@ -1,7 +1,7 @@
 var flag = 1;
 var id = 2;
 function loadService() {
-    fetch(`/RestaurantManagement/api/service/${id}`).then(res => res.json()).then(data => {
+    fetch(`/api/service/${id}`).then(res => res.json()).then(data => {
         showService(data)
     })
 }

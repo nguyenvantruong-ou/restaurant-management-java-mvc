@@ -21,10 +21,10 @@
                     <p>Cảm ơn quý khách đã tin tưởng nhà hàng của chúng tôi. Chúng tôi
                         rất hân hạnh được phục vụ quý khách </p>
                     <sec:authorize access="hasAuthority('USER')">
-                        <a href="/RestaurantManagement/user-order?username=${pageContext.request.userPrincipal.name}">Go Back</a>
+                        <a href="<c:url value='/user-order?username=${pageContext.request.userPrincipal.name}' />">Go Back</a>
                     </sec:authorize>
                     <sec:authorize access="hasAuthority('STAFF')">
-                        <a href="/RestaurantManagement/order">Go Back</a>
+                        <a href="<c:url value='/order' />">Go Back</a>
                     </sec:authorize>
                 </div>
             </div>

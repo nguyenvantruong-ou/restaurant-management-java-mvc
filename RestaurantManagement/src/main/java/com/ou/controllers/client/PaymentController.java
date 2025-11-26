@@ -27,6 +27,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  *
@@ -80,15 +81,18 @@ public class PaymentController {
     @GetMapping("/payment-momo/created-bill")
     public String paymentPost(@RequestParam(value = "totalMoney") String totalMoney,
             @RequestParam(value = "ordId") int ordId,
-            @RequestParam(value = "userId") String userId) throws NoSuchAlgorithmException,
+            @RequestParam(value = "userId") String userId,
+            HttpServletRequest request) throws NoSuchAlgorithmException,
             InvalidKeyException, ExecutionException, JsonProcessingException, InterruptedException {
         Bill bill = new Bill();
         bill.setId(ordId);
         bill.setUserId(Integer.parseInt(userId));
         bill.setBillCreatedDate(LocalDate.now());
         bill.setBillTotalMoney(new BigDecimal(totalMoney));
-        String url = String.format("http://localhost:8080/RestaurantManagement/payment-completed?ordId=%d&userId=%d&totalMoney=%f",
-                 bill.getId(), bill.getUserId(), bill.getBillTotalMoney());
+        // Build URL dynamically using request
+        String baseUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
+        String url = String.format("%s/payment-completed?ordId=%d&userId=%d&totalMoney=%f",
+                 baseUrl, bill.getId(), bill.getUserId(), bill.getBillTotalMoney());
         return String.format("redirect:%s", momoUtil.createOrder(bill.getBillTotalMoney().divide(new BigDecimal(1000)),
                 "Thanh toan tiec", url, url).get("payUrl"));
     }

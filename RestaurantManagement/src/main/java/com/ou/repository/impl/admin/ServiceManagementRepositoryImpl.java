@@ -16,12 +16,14 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author Wall D
  */
 @Repository
+@Transactional
 public class ServiceManagementRepositoryImpl implements ServiceManagementRepository{
     @Autowired
     LocalSessionFactoryBean sessionFactory;

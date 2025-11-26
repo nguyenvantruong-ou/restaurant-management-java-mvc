@@ -68,8 +68,8 @@
                         <td>${o[6]}</td>
                         <td>${o[7]}</td>
                         <td>${o[8]}</td>
-                        <td><a href="/RestaurantManagement/payment?id=${o[0]}"><input type="submit" id="submitbutton" value="Thanh toán" class="btn btn-success"></a></td>
-                        <td><a href="/RestaurantManagement/order/delete?ordId=${o[0]}"><input type="submit" id="submitbutton" value="Xoá" class="btn btn-danger"></a></td>
+                        <td><a href="<c:url value='/payment?id=${o[0]}' />"><input type="submit" id="submitbutton" value="Thanh toán" class="btn btn-success"></a></td>
+                        <td><a href="<c:url value='/order/delete?ordId=${o[0]}' />"><input type="submit" id="submitbutton" value="Xoá" class="btn btn-danger"></a></td>
                     </tr>
                 </c:forEach>
             </tbody>

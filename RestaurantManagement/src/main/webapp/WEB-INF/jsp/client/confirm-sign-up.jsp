@@ -29,7 +29,7 @@
 
 <script>
     function sendAgain() {
-    fetch(`/RestaurantManagement/api/sign-in-again`).then(res => res.json()).then(data => {
+    fetch(`/api/sign-in-again`).then(res => res.json()).then(data => {
     })
     }
 </script>

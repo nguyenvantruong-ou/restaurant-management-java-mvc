@@ -7,7 +7,7 @@ $("#username").ready(function () {
     var lob_id = x.slice(x.indexOf('?id=') + 4)
     let username = document.getElementById("username").innerHTML;
     if (username != null && username != "") {
-        fetch("/RestaurantManagement/api/check-username-in-bill", {
+        fetch("/api/check-username-in-bill", {
             method: 'post',
             body: JSON.stringify({
                 "username": username,
@@ -75,7 +75,7 @@ function saveComment() {
     var lob_id = x.slice(x.indexOf('?id=') + 4)
     let username = document.getElementById("username").innerHTML;
     let content = document.getElementById("content").value;
-    fetch("/RestaurantManagement/api/save-comment", {
+    fetch("/api/save-comment", {
         method: 'post',
         body: JSON.stringify({
             "username": username,
@@ -165,7 +165,7 @@ function setStarText(index) {
 }
 
 function countCommentByLobId(lob_id) {
-    fetch("/RestaurantManagement/api/count-comment-by-lob-id", {
+    fetch("/api/count-comment-by-lob-id", {
         method: 'post',
         body: JSON.stringify({
             "lob_id": lob_id
@@ -182,7 +182,7 @@ function countCommentByLobId(lob_id) {
 }
 
 function totalStarsByLobId(lob_id) {
-    fetch("/RestaurantManagement/api/total-stars-by-lob-id", {
+    fetch("/api/total-stars-by-lob-id", {
         method: 'post',
         body: JSON.stringify({
             "lob_id": lob_id
@@ -205,7 +205,7 @@ function getListCmtByLobbyId() {
     var lob_id = x.slice(x.indexOf('?id=') + 4)
     countCommentByLobId(lob_id);
     totalStarsByLobId(lob_id);
-    fetch("/RestaurantManagement/api/get-list-comment-by-lob-id", {
+    fetch("/api/get-list-comment-by-lob-id", {
         method: 'post',
         body: JSON.stringify({
             "lob_id": lob_id,
@@ -259,7 +259,7 @@ function getStarDetail() {
 //    lay so binh theo sao
     var x = location.href
     var lob_id = x.slice(x.indexOf('?id=') + 4)
-    fetch("/RestaurantManagement/api/get-list-star-detail", {
+    fetch("/api/get-list-star-detail", {
         method: 'post',
         body: JSON.stringify({
             "lob_id": lob_id
